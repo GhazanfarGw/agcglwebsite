@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AGC Global Logistics — Digital Land Freight for the UAE & GCC | agcgl.com</title>
+<meta name="description" content="AGC Global Logistics is digitizing road freight across the UAE and GCC. Instant quotes, verified truck capacity, live tracking, cross-border corridors, and one invoice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#13293D;
+  --navy-deep:#0C1B29;
+  --navy-2:#1E3B57;
+  --teal:#1B8A8F;
+  --teal-deep:#136B70;
+  --teal-tint:#E4F2F2;
+  --lime:#A8E063;
+  --lime-ink:#27400E;
+  --paper:#F3F6F5;
+  --card:#FFFFFF;
+  --ink:#152430;
+  --muted:#57707E;
+  --line:#DFE7E9;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(12,27,41,.10);
+  --font-d:'Archivo',sans-serif;
+  --font-b:'Inter',sans-serif;
+  --font-m:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-b);color:var(--ink);background:var(--paper);line-height:1.65;font-size:16px}
+img{max-width:100%}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{font-family:var(--font-m);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);font-weight:500}
+.eyebrow.on-dark{color:var(--lime)}
+h1,h2,h3{font-family:var(--font-d);line-height:1.12;letter-spacing:-.01em}
+h2{font-size:clamp(28px,4vw,40px);font-weight:700;margin:10px 0 14px}
+.lead{color:var(--muted);max-width:640px}
+section{padding:88px 0}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-d);font-weight:600;font-size:15px;padding:14px 26px;border-radius:10px;border:none;cursor:pointer;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+.btn-lime{background:var(--lime);color:var(--lime-ink)}
+.btn-lime:hover{box-shadow:0 8px 20px rgba(168,224,99,.35)}
+.btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-deep)}
+.chev{display:inline-block}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:rgba(19,41,61,.96);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.logo{display:flex;align-items:center;gap:12px;color:#fff}
+.logo-mark{display:flex;gap:3px}
+.logo-mark span{width:0;height:0;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:12px solid var(--teal)}
+.logo-mark span:nth-child(1){border-left-color:rgba(255,255,255,.45)}
+.logo-mark span:nth-child(3){border-left-color:var(--lime)}
+.logo-name{font-family:var(--font-d);font-weight:800;font-size:18px;letter-spacing:.02em;white-space:nowrap}
+.logo-name em{font-style:normal;color:var(--lime)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:rgba(255,255,255,.82);font-size:14.5px;font-weight:500;transition:color .15s}
+.nav-links a:hover{color:var(--lime)}
+.nav-cta{padding:11px 20px;font-size:14px}
+.menu-btn{display:none;background:none;border:none;color:#fff;font-size:26px;cursor:pointer}
+
+/* ---------- HERO ---------- */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:84px 0 0;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;right:-180px;top:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(27,138,143,.28),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:start;position:relative}
+.hero h1{font-size:clamp(38px,5.4vw,60px);font-weight:800;margin:18px 0 20px}
+.hero h1 .hl{color:var(--lime)}
+.hero p.sub{color:rgba(255,255,255,.78);font-size:18px;max-width:520px;margin-bottom:32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px}
+.hero-trust{display:flex;gap:28px;flex-wrap:wrap;padding-bottom:56px}
+.hero-trust div{font-size:13.5px;color:rgba(255,255,255,.66);display:flex;align-items:center;gap:8px}
+.tick{color:var(--lime);font-weight:700}
+
+/* quote card */
+.quote-card{background:var(--card);border-radius:var(--radius);padding:30px 28px;box-shadow:var(--shadow);color:var(--ink)}
+.quote-card h3{font-size:20px;font-weight:700;margin-bottom:4px}
+.quote-card .qc-sub{font-size:13.5px;color:var(--muted);margin-bottom:20px}
+.qc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.qc-field{display:flex;flex-direction:column;gap:6px}
+.qc-field label{font-family:var(--font-m);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.qc-field input,.qc-field select{font-family:var(--font-b);font-size:15px;padding:12px 14px;border:1.5px solid var(--line);border-radius:9px;background:#fff;color:var(--ink);width:100%}
+.qc-field input:focus,.qc-field select:focus{outline:none;border-color:var(--teal)}
+.quote-card .btn{width:100%;justify-content:center;margin-top:6px}
+.qc-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:12px}
+
+/* lane board */
+.laneboard{background:var(--navy-deep);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius) var(--radius) 0 0;margin-top:8px;overflow:hidden}
+.lb-head{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;border-bottom:1px solid rgba(255,255,255,.08)}
+.lb-head .lb-title{font-family:var(--font-m);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.lb-live{display:flex;align-items:center;gap:8px;font-family:var(--font-m);font-size:12px;color:var(--lime)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--lime);animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.lb-scroll{overflow-x:auto}
+.lb-table{width:100%;border-collapse:collapse;font-family:var(--font-m);font-size:13.5px;min-width:640px}
+.lb-table th{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);text-align:left;padding:12px 22px;font-weight:500}
+.lb-table td{padding:13px 22px;color:rgba(255,255,255,.86);border-top:1px solid rgba(255,255,255,.06);white-space:nowrap}
+.lb-table tr:hover td{background:rgba(27,138,143,.10)}
+.lane-route{color:#fff;font-weight:500}
+.lane-route .arr{color:var(--teal);margin:0 6px}
+.status-open{color:var(--lime)}
+.status-daily{color:rgba(255,255,255,.6)}
+
+/* ---------- STATS ---------- */
+.stats{background:var(--teal);color:#fff;padding:40px 0}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat b{display:block;font-family:var(--font-d);font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-.01em}
+.stat span{font-size:13.5px;opacity:.85}
+
+/* ---------- SERVICES ---------- */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.svc{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease}
+.svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:var(--teal)}
+.svc-icon{width:46px;height:46px;border-radius:11px;background:var(--teal-tint);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+.svc-icon svg{width:24px;height:24px;stroke:var(--teal);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.svc h3{font-size:18.5px;font-weight:700;margin-bottom:8px}
+.svc p{font-size:14.5px;color:var(--muted)}
+.svc .svc-tag{display:inline-block;margin-top:14px;font-family:var(--font-m);font-size:11.5px;letter-spacing:.08em;color:var(--teal)}
+
+/* ---------- HOW ---------- */
+.how{background:var(--navy);color:#fff}
+.how .lead{color:rgba(255,255,255,.72)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:48px;counter-reset:step}
+.step{position:relative;padding:26px 22px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.09);border-radius:var(--radius)}
+.step-num{font-family:var(--font-m);font-size:12px;color:var(--lime);letter-spacing:.12em;margin-bottom:14px;display:block}
+.step h3{font-size:17px;font-weight:700;margin-bottom:8px}
+.step p{font-size:14px;color:rgba(255,255,255,.68)}
+.step::after{content:"›";position:absolute;right:-17px;top:50%;transform:translateY(-50%);font-size:24px;color:var(--teal);font-family:var(--font-d)}
+.step:last-child::after{display:none}
+
+/* ---------- TRACKING ---------- */
+.track-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.track-mock{background:var(--navy-deep);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);color:#fff}
+.tm-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.tm-id{font-family:var(--font-m);font-size:13px;color:rgba(255,255,255,.6)}
+.tm-badge{font-family:var(--font-m);font-size:11.5px;background:rgba(168,224,99,.14);color:var(--lime);padding:5px 12px;border-radius:99px;display:flex;align-items:center;gap:7px}
+.tm-route{font-family:var(--font-d);font-size:22px;font-weight:700;margin-bottom:4px}
+.tm-route .arr{color:var(--teal)}
+.tm-meta{font-size:13px;color:rgba(255,255,255,.55);margin-bottom:26px}
+.timeline{list-style:none}
+.timeline li{position:relative;padding:0 0 24px 30px;font-size:14px}
+.timeline li::before{content:"";position:absolute;left:7px;top:6px;bottom:-6px;width:2px;background:rgba(255,255,255,.14)}
+.timeline li:last-child::before{display:none}
+.timeline li::after{content:"";position:absolute;left:2px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--teal);border:2.5px solid var(--navy-deep)}
+.timeline li.done::after{background:var(--lime)}
+.timeline li.now::after{background:var(--lime);box-shadow:0 0 0 5px rgba(168,224,99,.18);animation:pulse 1.6s infinite}
+.timeline li span{display:block;font-family:var(--font-m);font-size:11.5px;color:rgba(255,255,255,.45);margin-top:2px}
+.feat-list{list-style:none;margin-top:26px}
+.feat-list li{display:flex;gap:14px;margin-bottom:18px;font-size:15px}
+.feat-list .fl-ic{color:var(--teal);font-weight:800;font-family:var(--font-d)}
+.feat-list b{font-weight:600}
+
+/* ---------- SPLIT (shippers / carriers) ---------- */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.panel{border-radius:var(--radius);padding:44px 38px}
+.panel-ship{background:var(--card);border:1px solid var(--line)}
+.panel-carrier{background:var(--navy);color:#fff}
+.panel h3{font-size:24px;font-weight:700;margin:10px 0 12px}
+.panel p{font-size:15px;margin-bottom:22px}
+.panel-ship p{color:var(--muted)}
+.panel-carrier p{color:rgba(255,255,255,.72)}
+.panel ul{list-style:none;margin-bottom:28px}
+.panel li{padding-left:26px;position:relative;margin-bottom:10px;font-size:14.5px}
+.panel li::before{content:"✓";position:absolute;left:0;font-weight:700}
+.panel-ship li::before{color:var(--teal)}
+.panel-carrier li::before{color:var(--lime)}
+
+/* ---------- INDUSTRIES ---------- */
+.chips{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+.chip{font-family:var(--font-d);font-weight:600;font-size:14.5px;padding:12px 22px;border-radius:99px;background:var(--card);border:1.5px solid var(--line);transition:border-color .15s, color .15s}
+.chip:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ---------- ABOUT ---------- */
+.about{background:var(--teal-tint)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.vm{background:var(--card);border-left:4px solid var(--teal);border-radius:0 var(--radius) var(--radius) 0;padding:24px 26px;margin-bottom:18px;box-shadow:0 4px 14px rgba(12,27,41,.05)}
+.vm h4{font-family:var(--font-m);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.vm p{font-size:15.5px}
+
+/* ---------- CTA ---------- */
+.cta{background:linear-gradient(140deg,var(--navy) 0%,var(--teal-deep) 100%);color:#fff;text-align:center;border-radius:var(--radius);padding:72px 40px;position:relative;overflow:hidden}
+.cta h2{margin-bottom:14px}
+.cta p{color:rgba(255,255,255,.78);max-width:520px;margin:0 auto 32px}
+.cta .btn{margin:0 8px 10px}
+.cta-contact{margin-top:22px;font-family:var(--font-m);font-size:14.5px;color:rgba(255,255,255,.88)}
+.cta-contact a{transition:color .15s}
+.cta-contact a:hover{color:var(--lime)}
+.cta-contact .sep{margin:0 12px;color:rgba(255,255,255,.4)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--navy-deep);color:rgba(255,255,255,.65);padding:64px 0 34px;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1.3fr;gap:44px;margin-bottom:44px}
+.foot-grid h5{font-family:var(--font-d);color:#fff;font-size:14.5px;font-weight:700;margin-bottom:16px}
+.foot-grid a{display:block;margin-bottom:9px;transition:color .15s}
+.foot-grid a:hover{color:var(--lime)}
+.foot-brand p{max-width:280px;margin-top:14px;font-size:13.5px}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:12.5px;color:rgba(255,255,255,.4)}
+
+/* ---------- REVEAL ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease, transform .6s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .dot,.timeline li.now::after{animation:none}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:960px){
+  .hero-grid,.track-grid,.about-grid{grid-template-columns:1fr;gap:44px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .step::after{display:none}
+  .split{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr);gap:30px}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--navy-deep);flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid rgba(255,255,255,.1)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .svc-grid,.steps,.qc-row{grid-template-columns:1fr}
+  .hero{padding-top:56px}
+  .panel{padding:34px 26px}
+  .logo-name{font-size:14px}
+  .logo-mark span{border-top-width:7px;border-bottom-width:7px;border-left-width:10px}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav>
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="AGC Global Logistics home">
+      <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="logo-name">AGC <em>GLOBAL</em> LOGISTICS</span>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#tracking">Technology</a>
+      <a href="#carriers">For carriers</a>
+      <a href="why-choose-us.html">Why us</a>
+      <a href="#quote" class="btn btn-lime nav-cta">Move With Us</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow on-dark">UAE & GCC land freight</span>
+        <h1>Every truck. Every lane. <span class="hl">One platform.</span></h1>
+        <p class="sub">AGC is digitizing road freight across the UAE and GCC — instant quotes, verified truck capacity, live GPS tracking, and one clean invoice. Built for shippers who are done chasing WhatsApp updates.</p>
+        <div class="hero-actions">
+          <a href="#quote" class="btn btn-lime">Move With Us <span class="chev">›</span></a>
+          <a href="#carriers" class="btn btn-ghost">Join as a carrier</a>
+        </div>
+        <div class="hero-trust">
+          <div><span class="tick">✓</span> In logistics since 1991</div>
+          <div><span class="tick">✓</span> Licensed UAE land transport operator</div>
+          <div><span class="tick">✓</span> Cross-border GCC corridors</div>
+          <div><span class="tick">✓</span> 24/7 operations desk</div>
+        </div>
+      </div>
+
+      <!-- Quote card -->
+      <div class="quote-card" id="quote">
+        <h3>Get an instant quote</h3>
+        <div class="qc-sub">Tell us the lane — we reply within 30 minutes, day or night.</div>
+        <div class="qc-row">
+          <div class="qc-field">
+            <label for="from">Pickup</label>
+            <input id="from" type="text" placeholder="Dubai, UAE">
+          </div>
+          <div class="qc-field">
+            <label for="to">Delivery</label>
+            <input id="to" type="text" placeholder="Riyadh, KSA">
+          </div>
+        </div>
+        <div class="qc-row">
+          <div class="qc-field">
+            <label for="truck">Truck type</label>
+            <select id="truck">
+              <option>Flatbed</option>
+              <option>Curtainside</option>
+              <option>Box / dry van</option>
+              <option>Reefer (chilled/frozen)</option>
+              <option>Lowbed (heavy equipment)</option>
+              <option>Tipper</option>
+              <option>Double trailer</option>
+            </select>
+          </div>
+          <div class="qc-field">
+            <label for="weight">Cargo weight</label>
+            <input id="weight" type="text" placeholder="e.g. 24 tonnes">
+          </div>
+        </div>
+        <button class="btn btn-teal" onclick="quoteSubmit()">Get instant quote ›</button>
+        <div class="qc-note">No account needed · Fixed all-in pricing · VAT invoice included</div>
+      </div>
+    </div>
+
+    <!-- Lane board -->
+    <div class="laneboard rv">
+      <div class="lb-head">
+        <span class="lb-title">Active lanes — departures board</span>
+        <span class="lb-live"><span class="dot"></span> LIVE CAPACITY</span>
+      </div>
+      <div class="lb-scroll">
+        <table class="lb-table">
+          <thead>
+            <tr><th>Lane</th><th>Equipment</th><th>Transit</th><th>Frequency</th><th>Status</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="lane-route">DXB <span class="arr">→</span> AUH</td><td>Flatbed / Box</td><td>2–3 h</td><td class="status-daily">Multiple daily</td><td class="status-open">● Booking</td></tr>
+            <tr><td class="lane-route">DXB <span class="arr">→</span> RUH</td><td>Curtainside / Reefer</td><td>26–30 h</td><td class="status-daily">Daily</td><td class="status-open">● Booking</td></tr>
+            <tr><td class="lane-route">JEA <span class="arr">→</span> DMM</td><td>Flatbed / Double</td><td>14–18 h</td><td class="status-daily">Daily</td><td class="status-open">● Booking</td></tr>
+            <tr><td class="lane-route">DXB <span class="arr">→</span> MCT</td><td>Box / Reefer</td><td>8–10 h</td><td class="status-daily">Daily</td><td class="status-open">● Booking</td></tr>
+            <tr><td class="lane-route">AUH <span class="arr">→</span> DOH</td><td>Flatbed / Box</td><td>10–12 h</td><td class="status-daily">3× weekly</td><td class="status-open">● Booking</td></tr>
+            <tr><td class="lane-route">DXB <span class="arr">→</span> KWI</td><td>Curtainside</td><td>18–22 h</td><td class="status-daily">Weekly</td><td class="status-open">● Enquire</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="wrap stats-grid">
+    <div class="stat rv"><b>250+</b><span>Verified partner trucks</span></div>
+    <div class="stat rv"><b>35</b><span>Years in logistics — est. 1991</span></div>
+    <div class="stat rv"><b>98%</b><span>On-time delivery</span></div>
+    <div class="stat rv"><b>24/7</b><span>Live operations desk</span></div>
+  </div>
+</div>
+
+<!-- ================= SERVICES ================= -->
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">What we move</span>
+    <h2>Land freight, end to end</h2>
+    <p class="lead">From a single pallet across town to project cargo across borders — one operations team, one tracking link, one invoice.</p>
+
+    <div class="svc-grid">
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M1 8h13v8H1zM14 10h4l3 3v3h-7z"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg></div>
+        <h3>Full truckload (FTL)</h3>
+        <p>Dedicated trucks across all seven Emirates — flatbeds, boxes, curtainsides, reefers and tippers, matched to your cargo in minutes.</p>
+        <span class="svc-tag">UAE-WIDE · SAME-DAY DISPATCH</span>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19" opacity=".25"/><path d="M3 12h7l2-3 2 6 2-3h5"/></svg></div>
+        <h3>Cross-border GCC</h3>
+        <p>Scheduled corridors into Saudi Arabia, Oman, Qatar, Kuwait and Bahrain with customs coordination and border-crossing updates in real time.</p>
+        <span class="svc-tag">UAE ⇄ KSA · OMAN · QATAR</span>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M2 17h20M4 17V9h9v8M13 11h5l3 4v2"/><path d="M7 9V5h3v4"/></svg></div>
+        <h3>Project & heavy cargo</h3>
+        <p>Lowbeds, extendables and escort coordination for construction plant, machinery and oversized loads — permits handled by our team.</p>
+        <span class="svc-tag">CONSTRUCTION · OIL & GAS</span>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 4v5"/></svg></div>
+        <h3>Contract logistics</h3>
+        <p>Dedicated fleet programs for manufacturers, distributors and contractors — fixed monthly capacity, your routes, our trucks and drivers.</p>
+        <span class="svc-tag">DEDICATED FLEET · SLA-BACKED</span>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 1 8 8c0 5.3-8 12-8 12S4 15.3 4 10a8 8 0 0 1 8-8z"/></svg></div>
+        <h3>Distribution & last mile</h3>
+        <p>Multi-drop delivery runs for building materials, FMCG and retail — optimized routing with proof of delivery captured at every stop.</p>
+        <span class="svc-tag">MULTI-DROP · ePOD</span>
+      </div>
+      <div class="svc rv">
+        <div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Insured & compliant</h3>
+        <p>Goods-in-transit cover available on every load, verified drivers and vehicles, and VAT-compliant documentation on each shipment.</p>
+        <span class="svc-tag">GIT COVER · FULL COMPLIANCE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="eyebrow on-dark">How it works</span>
+    <h2>From request to POD in four steps</h2>
+    <p class="lead">The whole cycle runs on one system — you see what our operations team sees.</p>
+
+    <div class="steps">
+      <div class="step rv">
+        <span class="step-num">STEP 01</span>
+        <h3>Request</h3>
+        <p>Send your lane by web form, WhatsApp or phone. Fixed all-in quote back within 30 minutes.</p>
+      </div>
+      <div class="step rv">
+        <span class="step-num">STEP 02</span>
+        <h3>Match & dispatch</h3>
+        <p>We assign a verified truck and driver from our own fleet or partner network — documents shared before pickup.</p>
+      </div>
+      <div class="step rv">
+        <span class="step-num">STEP 03</span>
+        <h3>Track live</h3>
+        <p>Follow your cargo on a live GPS link. Automatic alerts at pickup, border crossings and delivery.</p>
+      </div>
+      <div class="step rv">
+        <span class="step-num">STEP 04</span>
+        <h3>POD & invoice</h3>
+        <p>Signed proof of delivery uploaded digitally, VAT invoice issued same day. Everything archived in your account.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRACKING / TECH ================= -->
+<section id="tracking">
+  <div class="wrap track-grid">
+    <div class="track-mock rv" aria-label="Example shipment tracking view">
+      <div class="tm-head">
+        <span class="tm-id">SHIPMENT #AGC-26-04187</span>
+        <span class="tm-badge"><span class="dot"></span> IN TRANSIT</span>
+      </div>
+      <div class="tm-route">Dubai <span class="arr">→</span> Riyadh</div>
+      <div class="tm-meta">Curtainside · 24T · ETA Tue 14:30 AST</div>
+      <ul class="timeline">
+        <li class="done">Pickup completed — Al Quoz, Dubai <span>MON 09:12 GST</span></li>
+        <li class="done">Border cleared — Al Batha crossing <span>MON 18:47 GST</span></li>
+        <li class="now">In transit — 214 km to Riyadh <span>LIVE GPS · UPDATED 2 MIN AGO</span></li>
+        <li>Delivery & ePOD — Riyadh Industrial City <span>ETA TUE 14:30 AST</span></li>
+      </ul>
+    </div>
+    <div>
+      <span class="eyebrow">Technology</span>
+      <h2>Visibility your current transporter can't give you</h2>
+      <p class="lead">Every AGC shipment runs through our transport management system — the same platform powering the region's leading digital freight operators.</p>
+      <ul class="feat-list">
+        <li><span class="fl-ic">›</span><span><b>Live GPS tracking link</b> — share it with your customer or site team, no app or login needed.</span></li>
+        <li><span class="fl-ic">›</span><span><b>Digital proof of delivery</b> — signed PODs photographed and archived the moment cargo lands.</span></li>
+        <li><span class="fl-ic">›</span><span><b>One invoice, zero chasing</b> — VAT-compliant billing with the POD attached, delivered same day.</span></li>
+        <li><span class="fl-ic">›</span><span><b>Per-shipment reporting</b> — lane history, transit times and spend, exportable for your finance team.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SHIPPERS / CARRIERS ================= -->
+<section id="carriers" style="padding-top:0">
+  <div class="wrap split">
+    <div class="panel panel-ship rv">
+      <span class="eyebrow">For shippers</span>
+      <h3>Move more, manage less</h3>
+      <p>Whether it's one urgent flatbed or a hundred loads a month, you get guaranteed capacity at a fixed price — with a human operations desk behind every shipment.</p>
+      <ul>
+        <li>Fixed all-in quotes in 30 minutes, 24/7</li>
+        <li>Own fleet + verified partner trucks for surge capacity</li>
+        <li>Credit terms available for contracted clients</li>
+        <li>Dedicated account manager for volume shippers</li>
+      </ul>
+      <a href="#quote" class="btn btn-teal">Move With Us ›</a>
+    </div>
+    <div class="panel panel-carrier rv">
+      <span class="eyebrow on-dark">For carriers & owner-operators</span>
+      <h3>Your truck, our loads</h3>
+      <p>Join the AGC partner network and keep your trucks full both ways. We handle the client, the paperwork and the payment — you drive.</p>
+      <ul>
+        <li>Consistent loads on UAE and cross-border lanes</li>
+        <li>Fast, transparent payouts — no 90-day waiting games</li>
+        <li>Return loads to cut empty kilometres</li>
+        <li>Simple onboarding: trade licence, mulkiya, insurance</li>
+      </ul>
+      <a href="#contact" class="btn btn-lime">Join the fleet ›</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INDUSTRIES ================= -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <span class="eyebrow">Who we serve</span>
+    <h2>Built for the GCC's cargo owners</h2>
+    <div class="chips rv">
+      <span class="chip">Construction & contracting</span>
+      <span class="chip">Building materials</span>
+      <span class="chip">Steel & metals</span>
+      <span class="chip">FMCG & food distribution</span>
+      <span class="chip">Oil & gas services</span>
+      <span class="chip">Retail & e-commerce</span>
+      <span class="chip">Industrial equipment</span>
+      <span class="chip">Chemicals (non-haz & haz)</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CTA ================= -->
+<section style="padding-top:0" id="contact">
+  <div class="wrap">
+    <div class="cta rv">
+      <h2>Ready to move?</h2>
+      <p>Send us your next lane and see the difference a digital operator makes. Quotes in 30 minutes, capacity when you need it.</p>
+      <a href="#quote" class="btn btn-lime">Move With Us ›</a>
+      <a href="https://wa.me/971509423881" class="btn btn-ghost">WhatsApp our ops desk</a>
+      <div class="cta-contact">
+        <a href="tel:+971509423881">+971 50 942 3881</a><span class="sep">·</span><a href="mailto:move@agcgl.com">move@agcgl.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo" aria-label="AGC Global Logistics home">
+          <span class="logo-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+          <span class="logo-name">AGC <em>GLOBAL</em> LOGISTICS</span>
+        </a>
+        <p>AGC Global Logistics — digital land freight across the UAE and GCC. In logistics since 1991. Own fleet, verified partner network, one platform. agcgl.com</p>
+      </div>
+      <div>
+        <h5>Services</h5>
+        <a href="#services">Full truckload</a>
+        <a href="#services">Cross-border GCC</a>
+        <a href="#services">Project cargo</a>
+        <a href="#services">Contract logistics</a>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="why-choose-us.html">Why choose us</a>
+        <a href="#carriers">Carrier partners</a>
+        <a href="#tracking">Technology</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <a href="tel:+971509423881">+971 50 942 3881</a>
+        <a href="mailto:move@agcgl.com">move@agcgl.com</a>
+        <a href="#">Dubai, United Arab Emirates</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 AGC Global Logistics (AGC Logistic Services L.L.C.). All rights reserved.</span>
+      <span>Licensed land transport operator · Dubai, UAE</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('menuBtn').addEventListener('click',function(){
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('#navLinks a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('navLinks').classList.remove('open');});
+});
+function quoteSubmit(){
+  var f=document.getElementById('from').value||'your pickup point';
+  var t=document.getElementById('to').value||'your destination';
+  alert('Thanks! Your request for '+f+' \u2192 '+t+' has been noted.\n\n(Connect this button to your email, WhatsApp Business or TMS when the site goes live.)');
+}
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target);}});
+},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(el){obs.observe(el);});
+</script>
+</body>
+</html>
